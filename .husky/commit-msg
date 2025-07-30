@@ -1,0 +1,19 @@
+#!/usr/bin/env sh
+
+# "$1" is the path to the file containing the commit message.
+npx commitlint --edit "$1" || {
+  echo "❌ Error: Commit message does not follow Conventional Commits."
+  echo "Please use one of the following patterns:"
+  echo "  - feat: ..."
+  echo "  - fix: ..."
+  echo "  - docs: ..."
+  echo "  - style: ..."
+  echo "  - refactor: ..."
+  echo "  - test: ..."
+  echo "  - chore: ..."
+  echo "  - chore(release): vX.Y.Z"
+  exit 1
+}
+
+echo "✅ Commit message follows Conventional Commits!"
+exit 0

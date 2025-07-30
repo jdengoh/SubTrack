@@ -1,0 +1,6 @@
+#!/usr/bin/env sh
+
+echo "🔧 Running fixes..."
+npx lint-staged
+
+echo "✅ All pre-commit checks passed!"
